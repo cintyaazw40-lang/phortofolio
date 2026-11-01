@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novitaap - Project Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Wadah untuk Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Wadah untuk Konten Project -->
+    <div id="project-container"></div>
+
+    <!-- Wadah untuk Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Panggil Model & Controller -->
+    <script src="models/projectData.js"></script>
+    <script src="controllers/layoutController.js"></script>
+    <script src="controllers/projectController.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Navbar & Footer
+            loadComponent('navbar-container', 'views/components/navbar.html');
+            loadComponent('footer-container', 'views/components/footer.html');
+            
+            // Load Konten Project HTML
+            loadComponent('project-container', 'views/pages/project-content.html').then(() => {
+                // Setelah HTML project dimuat, jalankan renderProjects()
+                renderProjects();
+            });
+        });
+    </script>
+</body>
+</html>
