@@ -10,16 +10,16 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header-section">
+  <!-- HEADER (tetap di atas saat scroll) -->
+  <header class="header-section" id="site-header">
     <nav class="nav-menu glass">
       <ul class="nav-links">
-        <li><a href="#" class="active">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">PROJEC PAGE</a></li>
-        <li><a href="#">AWARD</a></li>
-        <li><a href="#">CONTRIBUTIONS</a></li>
-        <li><a href="#">CERTIFICATES</a></li>
+        <li><a href="#home" class="active">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#project">PROJEC PAGE</a></li>
+        <li><a href="#award">AWARD</a></li>
+        <li><a href="#contributions">CONTRIBUTIONS</a></li>
+        <li><a href="#certificates">CERTIFICATES</a></li>
       </ul>
     </nav>
 
@@ -29,79 +29,165 @@
     </div>
   </header>
 
-  <main class="container">
-    
-    <!-- ABOUT SECTION (MENYATU) -->
-    <section class="about-section glass">
-      <div class="about-text">
-        <h1 class="title">ABOUT ME</h1>
-        <p>Hello everyone let me Introduce myself.<br>
-        My name is Cintya you can call me cin, i live in countryside of North Luwu, South Sulawesi. I pioneered design by joining the design community.</p>
-        <a href="#" class="btn-readmore">Read More <i class="fa-solid fa-arrow-down"></i></a>
-      </div>
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foto Profil">
-      </div>
-    </section>
-
-    <!-- SKILLS PROGRESS -->
-    <section class="skills-progress glass">
-      <div class="skill-bar"><span>Pixellab 95%</span><div class="progress"><div class="bar" style="width: 95%;"></div></div></div>
-      <div class="skill-bar"><span>Canva 89%</span><div class="progress"><div class="bar" style="width: 89%;"></div></div></div>
-      <div class="skill-bar"><span>Picsart 74%</span><div class="progress"><div class="bar" style="width: 74%;"></div></div></div>
-      <div class="skill-bar"><span>Capcut 76%</span><div class="progress"><div class="bar" style="width: 76%;"></div></div></div>
-    </section>
-
-    <div class="grid-layout">
-      <section class="experience glass">
-        <h2 class="section-title">My Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>2020</h3>
-            <ul><li>Ikut Workshop design online</li><li>Bergabung Komunitas Design</li></ul>
-          </div>
-          <div class="timeline-item">
-            <h3>2021</h3>
-            <ul><li>Admin Instacreativegram</li><li>Menjadi member Aesthetic Editing</li></ul>
-          </div>
+  <!-- HALAMAN 1: HOME -->
+  <div class="page" id="home">
+    <main class="container">
+      <section class="about-section glass">
+        <div class="about-text">
+          <h1 class="title">ABOUT ME</h1>
+          <p>Hello everyone let me Introduce myself.<br>
+          My name is Cintya you can call me cin, i live in countryside of North Luwu, South Sulawesi. I pioneered design by joining the design community.</p>
+          <a href="#about" class="btn-readmore">Read More <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foto Profil">
         </div>
       </section>
 
-      <section class="right-side">
-        <div class="skills-list glass">
-          <h2 class="section-title">Skill</h2>
-          <div class="tags">
-            <span>Design Grafis</span><span>Editing Video</span><span>Photographer</span><span>Menulis Berita</span>
+      <section class="skills-progress glass">
+        <div class="skill-bar" style="--w: 95%;" data-value="95"><span>Web <b class="skill-num">95</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 89%;" data-value="89"><span>Mobile Application <b class="skill-num">89</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 74%;" data-value="74"><span>IOT <b class="skill-num">74</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 76%;" data-value="76"><span>UI/UX <b class="skill-num">76</b>%</span><div class="progress"><div class="bar"></div></div></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- HALAMAN 2: ABOUT (pengalaman, skill, software) -->
+  <div class="page" id="about">
+    <div class="container">
+      <div class="grid-layout">
+        <section class="experience glass">
+          <h2 class="section-title">My Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>2020</h3>
+              <ul><li>Ikut Workshop design online</li><li>Bergabung Komunitas Design</li></ul>
+            </div>
+            <div class="timeline-item">
+              <h3>2021</h3>
+              <ul><li>Admin Instacreativegram</li><li>Menjadi member Aesthetic Editing</li></ul>
+            </div>
           </div>
-        </div>
-        <div class="software glass">
-          <h2 class="section-title">Software</h2>
-          <div class="software-icons">
-            <div class="icon" style="color: #00C4CC; background: white;">P</div>
-            <div class="icon" style="background: linear-gradient(45deg, #00c4cc, #7d2ae8); color: white;">C</div>
-            <div class="icon" style="background: linear-gradient(45deg, #8a2be2, #4169e1); color: white;">P</div>
-            <div class="icon" style="color: black; background: white;"><i class="fa-solid fa-film"></i></div>
+        </section>
+
+        <section class="right-side">
+          <div class="skills-list glass">
+            <h2 class="section-title">Skill</h2>
+            <div class="tags">
+              <span>Design Grafis</span><span>Editing Video</span><span>Photographer</span><span>Menulis Berita</span>
+            </div>
           </div>
-        </div>
+          <div class="software glass">
+            <h2 class="section-title">Software</h2>
+            <div class="software-icons">
+              <div class="icon" style="color: #00C4CC; background: white;">P</div>
+              <div class="icon" style="background: linear-gradient(45deg, #00c4cc, #7d2ae8); color: white;">C</div>
+              <div class="icon" style="background: linear-gradient(45deg, #8a2be2, #4169e1); color: white;">P</div>
+              <div class="icon" style="color: black; background: white;"><i class="fa-solid fa-film"></i></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- HALAMAN 3-5: PROJECT (satu project satu halaman) -->
+  <!--
+    CARA MENGGANTI PROJECT (1 project = 1 halaman):
+    1. Taruh fotomu di folder assets/img/projects/ (misalnya proyek-1.jpg)
+    2. Ganti src="..." jadi src="assets/img/projects/proyek-1.jpg"
+    3. Ganti "Nama Project" (di atas foto) dan keterangan (di bawah foto)
+    Mau tambah project? Salin satu blok <div class="page" ...> sampai penutupnya,
+    lalu ganti id-nya (misalnya project-4). Biarkan data-nav="project" tetap ada.
+  -->
+  <div class="page" id="project" data-nav="project">
+    <div class="container">
+      <section class="projects glass">
+        <h2 class="section-title">My Project</h2>
+        <article class="project-card">
+          <h3 class="project-name">Nama Project 1</h3>
+          <div class="gate">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="Nama Project 1">
+            <span class="gate-door gate-left"></span>
+            <span class="gate-door gate-right"></span>
+          </div>
+          <p class="project-desc">Keterangan singkat tentang project ini.</p>
+        </article>
       </section>
     </div>
+  </div>
 
-    <!-- PROJECT -->
-    <section class="projects glass">
-      <h2 class="section-title">My Project</h2>
-      <div class="project-grid">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80" alt="Proyek 1">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=300&q=80" alt="Proyek 2">
-        <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=300&q=80" alt="Proyek 3">
-      </div>
-    </section>
-  </main>
+  <div class="page" id="project-2" data-nav="project">
+    <div class="container">
+      <section class="projects glass">
+        <h2 class="section-title">My Project</h2>
+        <article class="project-card">
+          <h3 class="project-name">Nama Project 2</h3>
+          <div class="gate">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=80" alt="Nama Project 2">
+            <span class="gate-door gate-left"></span>
+            <span class="gate-door gate-right"></span>
+          </div>
+          <p class="project-desc">Keterangan singkat tentang project ini.</p>
+        </article>
+      </section>
+    </div>
+  </div>
 
-  <footer class="footer glass">
-    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Icon">
-    <div><p>Archive by</p><strong>@cintya.azwa</strong></div>
-  </footer>
+  <div class="page" id="project-3" data-nav="project">
+    <div class="container">
+      <section class="projects glass">
+        <h2 class="section-title">My Project</h2>
+        <article class="project-card">
+          <h3 class="project-name">Nama Project 3</h3>
+          <div class="gate">
+            <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1000&q=80" alt="Nama Project 3">
+            <span class="gate-door gate-left"></span>
+            <span class="gate-door gate-right"></span>
+          </div>
+          <p class="project-desc">Keterangan singkat tentang project ini.</p>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <!-- HALAMAN 4: AWARD -->
+  <div class="page" id="award">
+    <div class="container">
+      <section class="projects glass">
+        <h2 class="section-title">Award</h2>
+        <p class="placeholder-text">Isi penghargaan akan ditambahkan di sini.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- HALAMAN 5: CONTRIBUTIONS -->
+  <div class="page" id="contributions">
+    <div class="container">
+      <section class="projects glass">
+        <h2 class="section-title">Contributions</h2>
+        <p class="placeholder-text">Isi kontribusi akan ditambahkan di sini.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- HALAMAN 6: CERTIFICATES -->
+  <div class="page" id="certificates">
+    <div class="container">
+      <section class="projects glass">
+        <h2 class="section-title">Certificates</h2>
+        <p class="placeholder-text">Isi sertifikat akan ditambahkan di sini.</p>
+      </section>
+    <footer class="footer glass">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Icon">
+      <div><p>Archive by</p><strong>@cintya.azwa</strong></div>
+    </footer>
+    </div>
+  </div>
+
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/scroll.js"></script>
 </body>
 </html>
