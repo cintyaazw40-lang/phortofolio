@@ -356,3 +356,598 @@ body { padding-bottom: 0; }
   .nama-logo { padding: 0.4rem 1.3rem; font-size: 1.1rem; }
   .kotak-kosong { height: 38px; }
 }
+
+
+/* --- AWARD: piala -> foto -> foto bergeser ke kiri -> keterangan muncul --- */
+.award-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+.award-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+/* Foto */
+.award-photo {
+  position: relative;
+  width: min(70vw, 280px);
+  aspect-ratio: 4 / 5;
+  opacity: 0;
+  transform: scale(.85);
+  transition: opacity .3s, transform .3s;
+}
+.award-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.award-badge {
+  position: absolute;
+  right: -14px;
+  bottom: -14px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  border: 1px solid rgba(255,255,255,.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  opacity: 0;
+  transform: scale(0) rotate(-40deg);
+  transition: opacity .3s, transform .3s;
+}
+.award-badge svg { width: 38px; height: 44px; }
+
+/* Keterangan */
+.award-info {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+.award-info-inner > * {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity .3s, transform .3s;
+}
+.award-tag {
+  display: inline-block;
+  padding: .25rem 1.1rem;
+  border-radius: 30px;
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.45);
+  font-size: .95rem;
+  margin-bottom: .9rem;
+}
+.award-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4.6vh, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.award-meta { font-size: 1.05rem; color: rgba(255,255,255,.85); margin-bottom: .9rem; }
+.award-desc { font-size: 1.05rem; line-height: 1.75; }
+
+/* Piala (animasi pembuka, di tengah) */
+.award-trophy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(210px, 34vh);
+  aspect-ratio: 120 / 140;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 3;
+}
+.award-trophy svg { width: 100%; height: 100%; filter: drop-shadow(0 10px 18px rgba(0,0,0,.3)); }
+.award-trophy::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,240,170,.7), rgba(255,240,170,0) 62%);
+  opacity: 0;
+  z-index: -1;
+}
+.award-spark {
+  position: absolute;
+  color: #fff6c2;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px rgba(255,230,120,.9);
+  opacity: 0;
+}
+.sp1 { left: -22%; top: 8%; }
+.sp2 { right: -20%; top: 22%; font-size: 1.1rem; }
+.sp3 { left: -12%; bottom: 14%; font-size: 1.1rem; }
+.sp4 { right: -26%; bottom: 6%; }
+
+/* ---- Saat halaman Award muncul: urutan animasi ---- */
+.award-stage.is-playing .award-trophy { animation: trophy-show 2.8s ease both; }
+.award-stage.is-playing .award-trophy::before { animation: trophy-glow 2.8s ease both; }
+.award-stage.is-playing .award-spark { animation: spark-twinkle 1.1s ease-in-out .5s 2 both; }
+.award-stage.is-playing .sp2 { animation-delay: .8s; }
+.award-stage.is-playing .sp3 { animation-delay: 1.1s; }
+.award-stage.is-playing .sp4 { animation-delay: .65s; }
+
+.award-stage.is-playing .award-photo {
+  opacity: 1;
+  transform: none;
+  transition: opacity .9s ease 2.3s, transform .9s ease 2.3s;
+}
+.award-stage.is-playing .award-badge {
+  opacity: 1;
+  transform: none;
+  transition: opacity .5s ease 3.9s, transform .8s cubic-bezier(.3, 1.6, .5, 1) 3.9s;
+}
+.award-stage.is-playing .award-info {
+  opacity: 1;
+  transform: none;
+  transition: opacity .8s ease 3.3s, transform .8s ease 3.3s;
+}
+.award-stage.is-playing .award-info-inner > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity .7s ease, transform .7s ease;
+}
+.award-stage.is-playing .award-info-inner > :nth-child(1) { transition-delay: 3.9s; }
+.award-stage.is-playing .award-info-inner > :nth-child(2) { transition-delay: 4.1s; }
+.award-stage.is-playing .award-info-inner > :nth-child(3) { transition-delay: 4.3s; }
+.award-stage.is-playing .award-info-inner > :nth-child(4) { transition-delay: 4.5s; }
+
+@keyframes trophy-show {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(-30deg); }
+  25%  { opacity: 1; transform: translate(-50%, -50%) scale(1.18) rotate(8deg); }
+  38%  { transform: translate(-50%, -50%) scale(.94) rotate(-4deg); }
+  46%  { transform: translate(-50%, -50%) scale(1) rotate(0); }
+  72%  { opacity: 1; transform: translate(-50%, -50%) scale(1.06) rotate(0); }
+  100% { opacity: 0; transform: translate(-50%, -78%) scale(.5) rotate(0); }
+}
+@keyframes trophy-glow {
+  0%, 20% { opacity: 0; transform: scale(.6); }
+  45%     { opacity: 1; transform: scale(1); }
+  72%     { opacity: .8; transform: scale(1.1); }
+  100%    { opacity: 0; transform: scale(1.3); }
+}
+@keyframes spark-twinkle {
+  0%   { opacity: 0; transform: scale(.3) rotate(0); }
+  50%  { opacity: 1; transform: scale(1.2) rotate(90deg); }
+  100% { opacity: 0; transform: scale(.3) rotate(180deg); }
+}
+
+/* ---- Laptop/desktop: foto di tengah lalu bergeser ke kiri, keterangan muncul di kanannya ---- */
+@media (min-width: 769px) {
+  .award-stage { min-height: 0; flex: 1 1 auto; }
+  .award-row {
+    flex-direction: row;
+    gap: 0;
+    width: auto;
+    height: 100%;
+    max-height: 100%;
+    justify-content: center;
+  }
+  .award-photo {
+    flex: 0 0 auto;
+    height: min(100%, 540px);
+    width: auto;
+  }
+  /* lebar keterangan 0 -> 480px; karena baris selalu di tengah, foto otomatis meluncur ke kiri */
+  .award-info {
+    flex: 0 0 0;
+    width: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 0;
+    transform: none;
+    transition: flex-basis .3s, margin-left .3s, opacity .3s;
+  }
+  .award-info-inner { width: 480px; flex: 0 0 480px; }
+  .award-stage.is-playing .award-info {
+    flex-basis: 480px;
+    margin-left: 3rem;
+    opacity: 1;
+    transition: flex-basis 1.1s cubic-bezier(.65, 0, .25, 1) 3.1s,
+                margin-left 1.1s cubic-bezier(.65, 0, .25, 1) 3.1s,
+                opacity .8s ease 3.3s;
+  }
+}
+
+/* Tanpa animasi bagi yang memilih mengurangi gerakan: langsung tampil lengkap */
+@media (prefers-reduced-motion: reduce) {
+  .award-trophy { display: none; }
+  .award-photo, .award-badge, .award-info, .award-info-inner > * {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 769px) {
+  .award-info { flex-basis: 480px !important; margin-left: 3rem !important; }
+}
+
+
+
+/* --- CERTIFICATES: muncul dari bawah satu per satu, bisa digeser kanan-kiri --- */
+.cert-stage { display: flex; flex-direction: column; justify-content: center; gap: .9rem; min-height: 0; margin-top: .75rem; }
+.cert-carousel { position: relative; }
+
+.cert-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: .5rem 1rem 1rem;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+.cert-track::-webkit-scrollbar { display: none; }
+.cert-track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+/* rata tengah kalau sertifikatnya sedikit */
+.cert-card:first-child { margin-left: auto; }
+.cert-card:last-child  { margin-right: auto; }
+
+.cert-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(90px);
+  transition: opacity .3s, transform .3s;
+}
+.cert-image {
+  width: min(78vw, 400px);
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
+  background: rgba(255,255,255,.2);
+  cursor: zoom-in;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.cert-card:hover .cert-image { transform: scale(1.03); box-shadow: 0 12px 28px rgba(0,0,0,.3); }
+.cert-image img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  -webkit-user-drag: none; user-select: none; pointer-events: none;
+}
+.cert-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-top: .8rem; }
+.cert-meta  { font-size: .95rem; color: rgba(255,255,255,.85); }
+
+/* Tombol panah */
+.cert-nav {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.7);
+  background: rgba(35,80,52,.75);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity .3s, background .3s;
+}
+.cert-prev { left: 4px; }
+.cert-next { right: 4px; }
+.cert-nav:hover { background: rgba(35,80,52,.95); }
+.cert-nav:disabled { opacity: .25 !important; cursor: default; }
+
+/* Titik penunjuk */
+.cert-dots { display: flex; justify-content: center; gap: .6rem; opacity: 0; transition: opacity .3s; }
+.cert-dots span {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,.4);
+  transition: background .3s, transform .3s;
+}
+.cert-dots span.on { background: #fff; transform: scale(1.3); }
+.cert-hint { text-align: center; font-size: .85rem; opacity: 0; transition: opacity .3s; color: rgba(255,255,255,.85); }
+
+/* Saat halaman Certificates muncul: naik dari bawah satu per satu */
+.cert-stage.is-playing .cert-card {
+  opacity: 1;
+  transform: none;
+  transition: opacity .8s ease, transform .95s cubic-bezier(.2, .85, .25, 1);
+}
+.cert-stage.is-playing .cert-card:nth-child(1) { transition-delay: .1s; }
+.cert-stage.is-playing .cert-card:nth-child(2) { transition-delay: .45s; }
+.cert-stage.is-playing .cert-card:nth-child(3) { transition-delay: .8s; }
+.cert-stage.is-playing .cert-card:nth-child(n+4) { transition-delay: 1.1s; }
+.cert-stage.is-playing .cert-nav  { opacity: 1; transition: opacity .6s ease 1.5s, background .3s; }
+.cert-stage.is-playing .cert-dots { opacity: 1; transition: opacity .6s ease 1.5s; }
+.cert-stage.is-playing .cert-hint { opacity: .9; transition: opacity .6s ease 1.7s; }
+
+@media (min-width: 769px) {
+  .cert-image { width: auto; height: min(31vh, 290px); }
+  .cert-prev { left: 8px; }
+  .cert-next { right: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-card, .cert-nav, .cert-dots, .cert-hint { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* judul section (pill) selebar isinya saja, tidak melebar penuh */
+.projects > .section-title { align-self: flex-start; }
+.cert-stage { gap: .6rem; }
+.cert-title { margin-top: .6rem; font-size: 1.2rem; }
+.cert-hint { font-size: .8rem; }
+
+
+/* --- LIGHTBOX SERTIFIKAT: membesar, latar belakang blur --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(25, 55, 38, .4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, visibility 0s linear .35s;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; transition: opacity .35s ease; }
+
+.lb-figure {
+  margin: 0;
+  text-align: center;
+  transform: scale(.86) translateY(24px);
+  transition: transform .5s cubic-bezier(.2, .9, .25, 1);
+}
+.lightbox.is-open .lb-figure { transform: none; }
+
+.lb-img {
+  display: block;
+  margin: 0 auto;
+  max-width: min(86vw, 1000px);
+  max-height: 74vh;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,.65);
+  box-shadow: 0 22px 60px rgba(0,0,0,.45);
+  background: #fff;
+}
+.lb-caption { margin-top: 1rem; color: #fff; display: flex; flex-direction: column; gap: .15rem; }
+.lb-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; }
+.lb-meta { font-size: 1rem; color: rgba(255,255,255,.88); }
+
+.lb-close, .lb-nav {
+  border: 1px solid rgba(255,255,255,.7);
+  background: rgba(35, 80, 52, .75);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: background .3s, transform .3s;
+}
+.lb-close:hover, .lb-nav:hover { background: rgba(35, 80, 52, .95); }
+.lb-close { position: absolute; top: 18px; right: 22px; width: 46px; height: 46px; font-size: 1.1rem; }
+.lb-nav { flex: 0 0 auto; width: 48px; height: 48px; font-size: 1.1rem; }
+
+html.lb-open { overflow: hidden; }
+
+@media (max-width: 768px) {
+  .lightbox { flex-wrap: wrap; align-content: center; }
+  .lb-figure { order: 1; width: 100%; }
+  .lb-nav { order: 2; margin-top: .5rem; }
+  .lb-img { max-width: 92vw; max-height: 62vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lightbox, .lb-figure { transition: none; }
+}
+
+
+
+/* --- CONTRIBUTIONS CLOTHESLINE STYLE (REVISI SCROLL) --- */
+#contributions {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.contrib-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%; 
+    max-width: 1200px;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.contrib-header {
+    text-align: left;
+    max-width: 800px;
+    margin-top: 10px;
+}
+
+#contributions .contrib-header .tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#contributions .contrib-header .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem !important; 
+    line-height: 1.2;
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+#contributions .contrib-header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 10px 0;
+}
+
+#contributions .contrib-header .desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Area Galeri Tali */
+.contrib-gallery-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 40px; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tali */
+.clothesline {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #888;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* Wadah Foto Berjejer (Bisa Digeser) */
+.clothesline-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px; 
+    width: 100%;
+    z-index: 2;
+    
+    /* Fitur Geser (Scroll) */
+    overflow-x: auto;
+    padding-bottom: 20px; /* Ruang untuk scrollbar */
+    scroll-behavior: smooth;
+    
+    /* Menyembunyikan scrollbar bawaan agar lebih rapi (opsional) */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+.clothesline-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* Gaya Polaroid / Card Putih */
+.polaroid-item {
+    position: relative;
+    background: #ffffff; /* Card putih solid */
+    padding: 12px 12px 45px 12px; /* Ruang bawah untuk teks */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    cursor: grab; /* Kursor tangan untuk digeser */
+    width: 220px; /* Lebar card */
+    flex-shrink: 0; /* Mencegah card mengecil */
+    border: 1px solid #e0e0e0;
+    
+    transform-origin: top center;
+    animation: swing 4s ease-in-out infinite alternate;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-item:active {
+    cursor: grabbing; /* Kursor saat diklik/digeser */
+}
+
+/* Foto di dalam Polaroid */
+.polaroid-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border: 1px solid #eee;
+    background-color: #f5f5f5; /* Warna abu-abu jika foto belum load */
+    pointer-events: none; /* Agar tidak mengganggu fungsi drag */
+}
+
+/* Teks di bawah foto */
+.polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #333;
+    margin-top: 15px;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Penjepit Baju */
+.clothespin {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 28px;
+    background: #d4a373;
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 3;
+}
+
+.clothespin::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #999;
+}
+
+@keyframes swing {
+    0% { transform: rotate(-1deg); }
+    100% { transform: rotate(1deg); }
+}
+
+.polaroid-item:hover {
+    animation-play-state: paused;
+    transform: translateY(-5px) rotate(0deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    z-index: 10;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    #contributions { height: auto; overflow: visible; padding-top: 100px;}
+    .contrib-container { height: auto; }
+    .contrib-header { text-align: center; }
+    .clothesline { display: none; }
+    .clothespin { display: none; }
+    .polaroid-item { width: 160px; animation: none; }
+    .polaroid-caption { font-size: 0.8rem; }
+}
