@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- Definisi gambar piala (dipakai ulang oleh halaman Award) -->
+  <!-- Definisi gambar piala -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
       <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
@@ -31,14 +31,13 @@
     </defs>
   </svg>
 
-
-  <!-- HEADER (tetap di atas saat scroll) -->
+  <!-- HEADER -->
   <header class="header-section" id="site-header">
     <nav class="nav-menu glass">
       <ul class="nav-links">
         <li><a href="#home" class="active">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#project">PROJEC PAGE</a></li>
+        <li><a href="#project">PROJECT PAGE</a></li>
         <li><a href="#award">AWARD</a></li>
         <li><a href="#contributions">CONTRIBUTIONS</a></li>
         <li><a href="#certificates">CERTIFICATES</a></li>
@@ -56,140 +55,178 @@
     <main class="container">
       <section class="about-section glass">
         <div class="about-text">
-          <h1 class="title">ABOUT ME</h1>
-          <p>Hello everyone let me Introduce myself.<br>
-          My name is Cintya you can call me cin, i live in countryside of North Luwu, South Sulawesi. I pioneered design by joining the design community.</p>
-          <a href="#about" class="btn-readmore">Read More <i class="fa-solid fa-arrow-down"></i></a>
+          <h1 class="title">CINTYA AZWA </h1>
+            <h2 class="title">SAFRINA R.H</h2>
+          <p>Halo perkenalkan.<br>
+          Saya Cintya atau akrap di panggil Cya saya merupakan mahasiswi semester 3 Politeknik negeri jember Prodi Teknik Informatika.</p>
         </div>
+
+        <!-- Foto di tengah (PNG tanpa background) -->
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foto Profil">
+          <!-- Logo keahlian: keluar menyebar dari balik foto -->
+          <div class="tools-burst">
+            <span class="burst-ring"></span>
+          <span class="tool tool-chip" style="--x:-14; --y:-23; --r:-6deg; --i:0" data-name="VS Code">
+            <span class="tool-inner"><img src="assets/img/tools/vscode.png" alt="VS Code" draggable="false"></span>
+          </span>
+          <span class="tool tool-chip" style="--x:14; --y:-23; --r:6deg; --i:1" data-name="Figma">
+            <span class="tool-inner"><img src="assets/img/tools/figma.png" alt="Figma" draggable="false"></span>
+          </span>
+          <span class="tool tool-pill" style="--x:-16.5; --y:-4; --r:-4deg; --i:2" data-name="Canva">
+            <span class="tool-inner"><img src="assets/img/tools/canva.png" alt="Canva" draggable="false"></span>
+          </span>
+          <span class="tool tool-chip" style="--x:20; --y:4; --r:5deg; --i:3" data-name="Microsoft Office">
+            <span class="tool-inner"><img src="assets/img/tools/office.png" alt="Microsoft Office" draggable="false"></span>
+          </span>
+          <span class="tool tool-chip" style="--x:-15; --y:15; --r:5deg; --i:4" data-name="CapCut">
+            <span class="tool-inner"><img src="assets/img/tools/capcut.png" alt="CapCut" draggable="false"></span>
+          </span>
+          <span class="tool tool-chip" style="--x:14; --y:19; --r:-6deg; --i:5" data-name="DaVinci Resolve">
+            <span class="tool-inner"><img src="assets/img/tools/davinci.png" alt="DaVinci Resolve" draggable="false"></span>
+          </span>
+          <span class="tool tool-pill" style="--x:22; --y:-10; --r:3deg; --i:6" data-name="Raspberry Pi">
+            <span class="tool-inner"><img src="assets/img/tools/raspberrypi.png" alt="Raspberry Pi" draggable="false"></span>
+          </span>
+          </div>
+          <img src="assets/img/foto-profil.png" alt="Foto Profil Cintya">
+        </div>
+
+        <!-- Info kanan -->
+        <div class="hero-side">
+          <span class="hero-label">Based in</span>
+          <span class="hero-place">NGANJUK,<br>JAWA TIMUR</span>
+          <span class="hero-skills">Web · Mobile · IoT · UI/UX</span>
         </div>
       </section>
 
       <section class="skills-progress glass">
-        <div class="skill-bar" style="--w: 95%;" data-value="95"><span>Web <b class="skill-num">95</b>%</span><div class="progress"><div class="bar"></div></div></div>
-        <div class="skill-bar" style="--w: 89%;" data-value="89"><span>Mobile Application <b class="skill-num">89</b>%</span><div class="progress"><div class="bar"></div></div></div>
-        <div class="skill-bar" style="--w: 74%;" data-value="74"><span>IOT <b class="skill-num">74</b>%</span><div class="progress"><div class="bar"></div></div></div>
-        <div class="skill-bar" style="--w: 76%;" data-value="76"><span>UI/UX <b class="skill-num">76</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 80%;" data-value="80"><span>Web <b class="skill-num">80</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 80%;" data-value="80"><span>Mobile Application <b class="skill-num">80</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 50%;" data-value="50"><span>IOT <b class="skill-num">50</b>%</span><div class="progress"><div class="bar"></div></div></div>
+        <div class="skill-bar" style="--w: 90%;" data-value="90"><span>UI/UX <b class="skill-num">90</b>%</span><div class="progress"><div class="bar"></div></div></div>
       </section>
     </main>
   </div>
 
-  <!-- HALAMAN 2: ABOUT (pengalaman, skill, software) -->
+  <!-- HALAMAN 2: ABOUT -->
   <div class="page" id="about">
     <div class="container">
-      <div class="grid-layout">
-        <section class="experience glass">
-          <h2 class="section-title">My Experience</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h3>2020</h3>
-              <ul><li>Ikut Workshop design online</li><li>Bergabung Komunitas Design</li></ul>
+      <div class="about-wrap" id="aboutWrap">
+
+        <section class="ab-card">
+          <div class="ab-photo">
+            <img src="assets/img/foto-profil.png" alt="Foto Cintya Azwa Safrina R.H" draggable="false">
+          </div>
+
+          <div class="ab-body">
+            <h2 class="ab-hi">Hi,</h2>
+            <div class="ab-text">
+              <p class="ab-intro">Saya Cintya Azwa Safrina R.H dari Nganjuk, Jawa Timur.</p>
+              <p>Mahasiswi semester 3 Teknik Informatika Politeknik Negeri Jember dengan IPK 3,85. Saya mengembangkan aplikasi web dan mobile serta IoT berbasis server dengan PHP, HTML, CSS, JavaScript, Node.js, SQLite, dan Raspberry Pi. Saya juga memahami prinsip desain UI/UX, menyusun dokumentasi teknis, membuat desain grafis, dan menyunting video. Sebagai freelancer pemetaan area (mapping) dan pembelajar mandiri, saya bersemangat berkontribusi dan berkembang di lingkungan profesional.</p>
             </div>
-            <div class="timeline-item">
-              <h3>2021</h3>
-              <ul><li>Admin Instacreativegram</li><li>Menjadi member Aesthetic Editing</li></ul>
-            </div>
+            <div class="ab-pill"><i class="ab-dots"><b></b><b></b><b></b></i><span>Teknik Informatika &middot; Politeknik Negeri Jember</span></div>
           </div>
         </section>
 
-        <section class="right-side">
-          <div class="skills-list glass">
-            <h2 class="section-title">Skill</h2>
-            <div class="tags">
-              <span>Design Grafis</span><span>Editing Video</span><span>Photographer</span><span>Menulis Berita</span>
-            </div>
-          </div>
-          <div class="software glass">
-            <h2 class="section-title">Software</h2>
-            <div class="software-icons">
-              <div class="icon" style="color: #00C4CC; background: white;">P</div>
-              <div class="icon" style="background: linear-gradient(45deg, #00c4cc, #7d2ae8); color: white;">C</div>
-              <div class="icon" style="background: linear-gradient(45deg, #8a2be2, #4169e1); color: white;">P</div>
-              <div class="icon" style="color: black; background: white;"><i class="fa-solid fa-film"></i></div>
-            </div>
+        <section class="ab-touch">
+          <h3 class="ab-touch-title">Get In<br>Touch</h3>
+          <div class="ab-links">
+            <a class="ab-link" href="mailto:cintyaazw40@gmail.com">
+              <i class="fa-solid fa-envelope"></i><span class="ab-go">&#8599;</span>
+              <small>cintyaazw40@gmail.com</small>
+            </a>
+            <a class="ab-link" href="https://www.linkedin.com/in/cintya-azwa-safrina-r-h-447a53384" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin-in"></i><span class="ab-go">&#8599;</span>
+              <small>linkedin.com/in/cintya-azwa-safrina-r-h</small>
+            </a>
+            <a class="ab-link" href="https://cintyaazw40-lang.github.io/phortofolio/" target="_blank" rel="noopener">
+              <i class="fa-solid fa-globe"></i><span class="ab-go">&#8599;</span>
+              <small>cintyaazw40-lang.github.io/phortofolio</small>
+            </a>
+            <a class="ab-link" href="tel:+6282229604634">
+              <i class="fa-solid fa-phone"></i><span class="ab-go">&#8599;</span>
+              <small>+62 822 2960 4634</small>
+            </a>
           </div>
         </section>
+
       </div>
     </div>
   </div>
 
-  <!-- HALAMAN 3-5: PROJECT (satu project satu halaman) -->
-  <!--
-    CARA MENGGANTI PROJECT (1 project = 1 halaman):
-    1. Taruh fotomu di folder assets/img/projects/ (misalnya proyek-1.jpg)
-    2. Ganti src="..." jadi src="assets/img/projects/proyek-1.jpg"
-    3. Ganti "Nama Project" (di atas foto) dan keterangan (di bawah foto)
-    Mau tambah project? Salin satu blok <div class="page" ...> sampai penutupnya,
-    lalu ganti id-nya (misalnya project-4). Biarkan data-nav="project" tetap ada.
-  -->
+  <!-- HALAMAN 3: PROJECT 1 - Datasync (2 HP miring berhadapan) -->
   <div class="page" id="project" data-nav="project">
     <div class="container">
       <section class="projects glass">
         <h2 class="section-title">My Project</h2>
-        <article class="project-card">
-          <h3 class="project-name">Nama Project 1</h3>
-          <div class="gate">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="Nama Project 1">
-            <span class="gate-door gate-left"></span>
-            <span class="gate-door gate-right"></span>
+        <article class="project-card has-phone">
+          <div class="phone-pair">
+            <img class="pair-left" src="assets/img/projects/datasync-core.png" alt="Datasync Core - Splash Screen" draggable="false">
+            <img class="pair-right" src="assets/img/projects/dashboard-keuangan.png" alt="Datasync - Dashboard" draggable="false">
           </div>
-          <p class="project-desc">Keterangan singkat tentang project ini.</p>
+          <div class="project-text">
+            <span class="project-tag">IoT + Mobile</span>
+            <h3 class="project-name">Datasync Core</h3>
+            <p class="project-desc">Solusi IoT untuk transaksi yang aman dan data yang selalu tersinkron, lengkap dengan aplikasi dashboard untuk memantau kas dan status sinkronisasi. Tulis di sini peranmu dan masalah yang diselesaikan.</p>
+            <div class="project-chips"><span>Raspberry Pi</span><span>Mobile</span><span>UI/UX</span></div>
+            <a class="btn-readmore project-more" href="project-datasync.html">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
       </section>
     </div>
   </div>
 
+  <!-- HALAMAN 4: PROJECT 2 - eXotic Gaming & Cafe (2 HP, posisi dibalik) -->
   <div class="page" id="project-2" data-nav="project">
     <div class="container">
       <section class="projects glass">
         <h2 class="section-title">My Project</h2>
-        <article class="project-card">
-          <h3 class="project-name">Nama Project 2</h3>
-          <div class="gate">
-            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=80" alt="Nama Project 2">
-            <span class="gate-door gate-left"></span>
-            <span class="gate-door gate-right"></span>
+        <article class="project-card has-phone reverse">
+          <div class="phone-pair pair-flat">
+            <img class="pair-left" src="assets/img/projects/exotic-left.png" alt="eXotic Gaming &amp; Cafe - Dashboard Owner" draggable="false">
+            <img class="pair-right" src="assets/img/projects/exotic-right.png" alt="eXotic Gaming &amp; Cafe - Absensi Staff" draggable="false">
           </div>
-          <p class="project-desc">Keterangan singkat tentang project ini.</p>
+          <div class="project-text">
+            <span class="project-tag">Mobile App</span>
+            <h3 class="project-name">eXotic Gaming &amp; Cafe</h3>
+            <p class="project-desc">Aplikasi manajemen untuk owner dan staff: pantau pendapatan harian, stok kritis, absensi, dan jadwal shift karyawan dari satu aplikasi. Tulis di sini peranmu dan teknologi yang dipakai.</p>
+            <div class="project-chips"><span>UI/UX</span><span>Mobile</span><span>Dashboard</span></div>
+            <a class="btn-readmore project-more" href="project-exotic.html">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
       </section>
     </div>
   </div>
 
+  <!-- HALAMAN 5: PROJECT 3 - Dapur Buk Mon (website, 2 jendela browser bertumpuk) -->
   <div class="page" id="project-3" data-nav="project">
     <div class="container">
       <section class="projects glass">
         <h2 class="section-title">My Project</h2>
-        <article class="project-card">
-          <h3 class="project-name">Nama Project 3</h3>
-          <div class="gate">
-            <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1000&q=80" alt="Nama Project 3">
-            <span class="gate-door gate-left"></span>
-            <span class="gate-door gate-right"></span>
+        <article class="project-card has-phone">
+          <div class="laptop-stack">
+            <img class="laptop-back" src="assets/img/projects/dapur-laptop-kontak.png" alt="Dapur Buk Mon - halaman Hubungi Kami" draggable="false">
+            <img class="laptop-front" src="assets/img/projects/dapur-laptop-home.png" alt="Dapur Buk Mon - halaman Beranda" draggable="false">
           </div>
-          <p class="project-desc">Keterangan singkat tentang project ini.</p>
+          <div class="project-text">
+            <span class="project-tag">Website</span>
+            <h3 class="project-name">Dapur Buk Mon</h3>
+            <p class="project-desc">Website usaha katering dengan halaman menu, layanan, testimoni, kontak, dan lokasi, lengkap dengan keranjang pesanan dan formulir hubungi kami. Tulis di sini peranmu dan teknologi yang dipakai.</p>
+            <div class="project-chips"><span>Website</span><span>Responsive</span><span>UI Design</span></div>
+            <a class="btn-readmore project-more" href="project-dapur.html">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
       </section>
     </div>
   </div>
 
-  <!-- HALAMAN 6: AWARD (piala muncul, lalu foto, foto bergeser ke kiri, keterangan muncul di sampingnya) -->
-  <!--
-    CARA MENGGANTI ISI AWARD:
-    1. Taruh fotomu di assets/img/ (misalnya foto-saya.jpg), lalu ganti src="..." di bawah
-    2. Ganti tulisan di dalam <div class="award-info-inner">: tingkat juara, nama prestasi,
-       penyelenggara + tahun, dan keterangan.
-    Mau tambah prestasi lain? Salin seluruh blok <div class="page" id="award"> ... sampai penutupnya,
-    ganti id-nya (misalnya award-2), dan biarkan data-nav="award" tetap ada.
-  -->
+  <!-- HALAMAN 6: AWARD -->
   <div class="page" id="award" data-nav="award">
     <div class="container">
       <section class="projects glass">
         <h2 class="section-title">Award</h2>
 
         <div class="award-stage">
-          <!-- Piala (animasi pembuka) -->
           <div class="award-trophy" aria-hidden="true">
             <svg viewBox="0 0 120 140"><use href="#trophy-symbol"></use></svg>
             <span class="award-spark sp1">&#10022;</span>
@@ -200,7 +237,7 @@
 
           <div class="award-row">
             <div class="award-photo">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Foto Cintya">
+              <img src="assets/img/foto_award.jpeg" alt="Cintya meraih penghargaan" style="object-fit: cover; object-position: center 30%;">
               <div class="award-badge" aria-hidden="true">
                 <svg viewBox="0 0 120 140"><use href="#trophy-symbol"></use></svg>
               </div>
@@ -208,10 +245,10 @@
 
             <div class="award-info">
               <div class="award-info-inner">
-                <span class="award-tag">Juara 1</span>
-                <h3 class="award-title">Nama Prestasi Kamu</h3>
-                <p class="award-meta">Nama Penyelenggara &middot; 2021</p>
-                <p class="award-desc">Tulis keterangan singkat tentang prestasi ini di sini: lomba apa, apa yang kamu buat, dan apa yang kamu pelajari.</p>
+                <span class="award-tag">Juara 2</span>
+                <h3 class="award-title">Perencanaan Bisnis TIK KMIPN VIII</h3>
+                <p class="award-meta">Politeknik Negeri Ujung Pandang, Makassar &middot; Sep 2026</p>
+                <p class="award-desc">Meraih Juara 2 kategori Perencanaan Bisnis TIK pada Kompetisi Mahasiswa Informatika Politeknik Nasional (KMIPN) VIII lewat proyek DataSync UMKM. Peranku mencakup pengembangan aplikasi, perangkat IoT berbasis Raspberry Pi 4, server cloud Google, serta perhitungan modal dan proyeksi laba.</p>
               </div>
             </div>
           </div>
@@ -220,95 +257,128 @@
     </div>
   </div>
 
- <!-- HALAMAN 5: CONTRIBUTIONS -->
-<div class="page" id="contributions" data-nav="contributions">
+  <!-- HALAMAN 7: CONTRIBUTIONS -->
+  <div class="page" id="contributions" data-nav="contributions">
     <div class="page-container contrib-container">
-        
-        <!-- Bagian Atas: Teks Keterangan -->
-        <div class="contrib-header">
-            <span class="tag">Organisasi</span>
-            <h1 class="title">IMUN (Indonesian Model United Nations)</h1>
-            <h2 class="subtitle">Delegasi / Staf Ahli &bull; 2022 – 2023</h2>
-            <p class="desc">
-                Tulis deskripsi singkat di sini. Menjelaskan peran, tugas utama, atau pencapaianmu selama berada di organisasi ini. Karena foto berjejer ke samping, teks dibuat ringkas di bagian atas.
-            </p>
+      <div class="contrib-header">
+        <span class="contrib-tag">Organisasi</span>
+        <h1 class="contrib-title">Informatics Community (IMUN)</h1>
+        <h2 class="contrib-subtitle">Divisi Perhubungan &bull; 2025 &ndash; Sekarang</h2>
+        <p class="contrib-desc">Menyusun notulen rapat divisi sebagai dokumentasi hasil pembahasan dan keputusan, mengatur jadwal rapat internal agar koordinasi berjalan tertib, dan menjadi penghubung komunikasi antara divisi dan pihak terkait dalam pelaksanaan program kerja.</p>
+      </div>
+
+      <div class="contrib-gallery-wrapper">
+        <div class="clothesline"></div>
+        <div class="clothesline-gallery" id="contribGallery">
+        <div class="polaroid-item land" style="--d:0.05s" data-i="0" data-full="assets/img/contributions/kegiatan-1.jpg" data-caption="Campus Expo SMEKSAGO 2026" role="button" tabindex="0" aria-label="Lihat foto: Campus Expo SMEKSAGO 2026">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-1-thumb.jpeg" alt="Campus Expo SMEKSAGO 2026" style="object-position: 50% 50%" draggable="false"></div>
+            <p class="polaroid-caption">Sapa Kampus SMKN 1 GONDANG</p>
+          </div>
         </div>
 
-        <!-- Bagian Bawah: Foto Gaya Clothesline (Berjejer di Tali) -->
-        <div class="contrib-gallery-wrapper">
-            <!-- Tali (Garis) -->
-            <div class="clothesline"></div>
-            
-            <div class="clothesline-gallery">
-                <!-- Foto 1 -->
-                <div class="polaroid-item" onclick="openLightbox('assets/img/contributions/osis-1.jpg')">
-                    <img src="data:image/svg+xml,..." alt="Kegiatan 1">
-                    <p class="polaroid-caption">Nama Kegiatan 1</p>
-                    <!-- Penjepit baju -->
-                    <div class="clothespin"></div> 
-                </div>
-                
-                <!-- Foto 2 -->
-                <div class="polaroid-item" onclick="openLightbox('assets/img/contributions/osis-2.jpg')">
-                    <img src="data:image/svg+xml,..." alt="Kegiatan 2">
-                    <p class="polaroid-caption">Nama Kegiatan 2</p>
-                    <div class="clothespin"></div>
-                </div>
-
-                <!-- Foto 3 -->
-                <div class="polaroid-item" onclick="openLightbox('assets/img/contributions/osis-3.jpg')">
-                    <img src="data:image/svg+xml,..." alt="Kegiatan 3">
-                    <p class="polaroid-caption">Nama Kegiatan 3</p>
-                    <div class="clothespin"></div>
-                </div>
-
-                <!-- Foto 4 -->
-                <div class="polaroid-item" onclick="openLightbox('assets/img/contributions/osis-4.jpg')">
-                    <img src="data:image/svg+xml,..." alt="Kegiatan 4">
-                    <p class="polaroid-caption">Nama Kegiatan 4</p>
-                    <div class="clothespin"></div>
-                </div>
-            </div>
+        <div class="polaroid-item port" style="--d:0.15s" data-i="1" data-full="assets/img/contributions/kegiatan-2.jpg" data-caption="Stand Polije" role="button" tabindex="0" aria-label="Lihat foto: Stand Polije">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-2-thumb.jpeg" alt="Stand Polije" style="object-position: 50% 50%" draggable="false"></div>
+            <p class="polaroid-caption">EXIBITION GANJIL</p>
+          </div>
         </div>
 
+        <div class="polaroid-item land" style="--d:0.25s" data-i="2" data-full="assets/img/contributions/kegiatan-3.jpg" data-caption="Foto bersama tim" role="button" tabindex="0" aria-label="Lihat foto: Foto bersama tim">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-3-thumb.jpeg" alt="Foto bersama tim" style="object-position: 50% 50%" draggable="false"></div>
+            <p class="polaroid-caption">Campus Expo SMEKSAGO 2026</p>
+          </div>
+        </div>
+
+        <div class="polaroid-item port" style="--d:0.35s" data-i="3" data-full="assets/img/contributions/kegiatan-4.jpg" data-caption="Pemaparan materi" role="button" tabindex="0" aria-label="Lihat foto: Pemaparan materi">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-4-thumb.jpeg" alt="Pemaparan materi" style="object-position: 50% 38%" draggable="false"></div>
+            <p class="polaroid-caption">Exibition GENAP 2026</p>
+          </div>
+        </div>
+
+        <div class="polaroid-item land" style="--d:0.45s" data-i="4" data-full="assets/img/contributions/kegiatan-5.jpg" data-caption="Kegiatan malam" role="button" tabindex="0" aria-label="Lihat foto: Kegiatan malam">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-5-thumb.jpeg" alt="Kegiatan malam" style="object-position: 50% 50%" draggable="false"></div>
+            <p class="polaroid-caption">Sapa kampus SMA DIPONEGORO NGANJUK</p>
+          </div>
+        </div>
+
+        <div class="polaroid-item port" style="--d:0.55s" data-i="5" data-full="assets/img/contributions/kegiatan-6.jpg" data-caption="Demo di stand" role="button" tabindex="0" aria-label="Lihat foto: Demo di stand">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-6-thumb.jpeg" alt="Demo di stand" style="object-position: 50% 30%" draggable="false"></div>
+            <p class="polaroid-caption">Sapa Kampus SMAN 1 REJOSO</p>
+          </div>
+        </div>
+
+        <div class="polaroid-item land" style="--d:0.65s" data-i="6" data-full="assets/img/contributions/kegiatan-7.jpg" data-caption="SMA Dipenogoro Nganjuk" role="button" tabindex="0" aria-label="Lihat foto: SMA Dipenogoro Nganjuk">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-7-thumb.jpeg" alt="SMA Dipenogoro Nganjuk" style="object-position: 50% 50%" draggable="false"></div>
+            <p class="polaroid-caption">Makrap Jilid 4 </p>
+          </div>
+        </div>
+
+        <div class="polaroid-item land" style="--d:0.75s" data-i="7" data-full="assets/img/contributions/kegiatan-8.jpg" data-caption="Sosialisasi di kelas" role="button" tabindex="0" aria-label="Lihat foto: Sosialisasi di kelas">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-8-thumb.jpeg" alt="Sosialisasi di kelas" style="object-position: 62% 50%" draggable="false"></div>
+            <p class="polaroid-caption">Sapa Kampus SMAN 1 REJOSO</p>
+          </div>
+        </div>
+
+        <div class="polaroid-item land" style="--d:0.85s" data-i="8" data-full="assets/img/contributions/kegiatan-9.jpg" data-caption="Presentasi di kelas" role="button" tabindex="0" aria-label="Lihat foto: Presentasi di kelas">
+          <span class="clothespin"></span>
+          <div class="polaroid-swing">
+            <div class="polaroid-photo"><img src="assets/img/contributions/kegiatan-9-thumb.jpeg" alt="Presentasi di kelas" style="object-position: 55% 50%" draggable="false"></div>
+            <p class="polaroid-caption">Sapa Kampus 2026</p>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
-</div>
-       
-   
+  </div>
 
-  <!-- HALAMAN 6: CERTIFICATES -->
+  <!-- HALAMAN 8: CERTIFICATES -->
   <div class="page" id="certificates">
     <div class="container">
       <section class="projects glass">
         <h2 class="section-title">Certificates</h2>
-        <!--
-          CARA MENGGANTI SERTIFIKAT:
-          1. Taruh foto/scan sertifikatmu di folder assets/img/certificates/ (misalnya sertif-1.jpg)
-          2. Ganti src="data:image/svg+xml..." jadi src="assets/img/certificates/sertif-1.jpg"
-          3. Ganti nama sertifikat dan penerbit/tahunnya.
-          Mau tambah sertifikat? Salin satu blok <article class="cert-card"> sampai </article>.
-        -->
         <div class="cert-stage">
           <div class="cert-carousel">
             <button class="cert-nav cert-prev" type="button" aria-label="Sebelumnya">&#10094;</button>
             <div class="cert-track">
             <article class="cert-card">
-              <div class="cert-image"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22600%22%20viewBox%3D%220%200%20800%20600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23fbf8ee%22%2F%3E%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22752%22%20height%3D%22552%22%20fill%3D%22none%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%226%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22716%22%20height%3D%22516%22%20fill%3D%22none%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22170%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2258%22%20fill%3D%22%235b4a1c%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%226%22%3ESERTIFIKAT%3C%2Ftext%3E%3Cline%20x1%3D%22250%22%20y1%3D%22205%22%20x2%3D%22550%22%20y2%3D%22205%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22290%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2230%22%20fill%3D%22%237a6a3a%22%20text-anchor%3D%22middle%22%3EGanti%20dengan%20foto%20sertifikat%201%3C%2Ftext%3E%3Crect%20x%3D%22220%22%20y%3D%22340%22%20width%3D%22360%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22%23e6dcc0%22%2F%3E%3Crect%20x%3D%22270%22%20y%3D%22372%22%20width%3D%22260%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22%23e6dcc0%22%2F%3E%3Ccircle%20cx%3D%22400%22%20cy%3D%22480%22%20r%3D%2242%22%20fill%3D%22%23e8c860%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%224%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22494%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3E%26%239733%3B%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Sertifikat 1" draggable="false"></div>
-              <h3 class="cert-title">Nama Sertifikat 1</h3>
-              <p class="cert-meta">Nama Penerbit &middot; 2021</p>
+              <div class="cert-image"><img src="assets/img/certificates/kmipn-finalis.jpg" alt="Sertifikat Finalis KMIPN VIII 2026" draggable="false"></div>
+              <h3 class="cert-title">Finalis KMIPN VIII</h3>
+              <p class="cert-meta">Politeknik Negeri Ujung Pandang &middot; 2026</p>
             </article>
 
             <article class="cert-card">
-              <div class="cert-image"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22600%22%20viewBox%3D%220%200%20800%20600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23fbf8ee%22%2F%3E%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22752%22%20height%3D%22552%22%20fill%3D%22none%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%226%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22716%22%20height%3D%22516%22%20fill%3D%22none%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22170%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2258%22%20fill%3D%22%235b4a1c%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%226%22%3ESERTIFIKAT%3C%2Ftext%3E%3Cline%20x1%3D%22250%22%20y1%3D%22205%22%20x2%3D%22550%22%20y2%3D%22205%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22290%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2230%22%20fill%3D%22%237a6a3a%22%20text-anchor%3D%22middle%22%3EGanti%20dengan%20foto%20sertifikat%202%3C%2Ftext%3E%3Crect%20x%3D%22220%22%20y%3D%22340%22%20width%3D%22360%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22%23e6dcc0%22%2F%3E%3Crect%20x%3D%22270%22%20y%3D%22372%22%20width%3D%22260%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22%23e6dcc0%22%2F%3E%3Ccircle%20cx%3D%22400%22%20cy%3D%22480%22%20r%3D%2242%22%20fill%3D%22%23e8c860%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%224%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22494%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3E%26%239733%3B%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Sertifikat 2" draggable="false"></div>
-              <h3 class="cert-title">Nama Sertifikat 2</h3>
-              <p class="cert-meta">Nama Penerbit &middot; 2022</p>
+              <div class="cert-image"><img src="assets/img/certificates/kmipn-juara2.jpg" alt="Sertifikat Juara 2 Perencanaan Bisnis TIK KMIPN VIII 2026" draggable="false"></div>
+              <h3 class="cert-title">Juara 2 Perencanaan Bisnis TIK</h3>
+              <p class="cert-meta">KMIPN VIII &middot; 2026</p>
             </article>
 
             <article class="cert-card">
-              <div class="cert-image"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22600%22%20viewBox%3D%220%200%20800%20600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23fbf8ee%22%2F%3E%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22752%22%20height%3D%22552%22%20fill%3D%22none%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%226%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22716%22%20height%3D%22516%22%20fill%3D%22none%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22170%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2258%22%20fill%3D%22%235b4a1c%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%226%22%3ESERTIFIKAT%3C%2Ftext%3E%3Cline%20x1%3D%22250%22%20y1%3D%22205%22%20x2%3D%22550%22%20y2%3D%22205%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22290%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2230%22%20fill%3D%22%237a6a3a%22%20text-anchor%3D%22middle%22%3EGanti%20dengan%20foto%20sertifikat%203%3C%2Ftext%3E%3Crect%20x%3D%22220%22%20y%3D%22340%22%20width%3D%22360%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22%23e6dcc0%22%2F%3E%3Crect%20x%3D%22270%22%20y%3D%22372%22%20width%3D%22260%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22%23e6dcc0%22%2F%3E%3Ccircle%20cx%3D%22400%22%20cy%3D%22480%22%20r%3D%2242%22%20fill%3D%22%23e8c860%22%20stroke%3D%22%23c9a54a%22%20stroke-width%3D%224%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22494%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3E%26%239733%3B%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Sertifikat 3" draggable="false"></div>
-              <h3 class="cert-title">Nama Sertifikat 3</h3>
-              <p class="cert-meta">Nama Penerbit &middot; 2023</p>
+              <div class="cert-image"><img src="assets/img/certificates/lkmm.jpg" alt="Sertifikat Peserta LKMM Pra-TD" draggable="false"></div>
+              <h3 class="cert-title">Peserta LKMM Pra-TD</h3>
+              <p class="cert-meta">HMJ TI Politeknik Negeri Jember &middot; 2025</p>
             </article>
+
+            <article class="cert-card">
+              <div class="cert-image"><img src="assets/img/certificates/pbb.jpg" alt="Sertifikat Wawasan Kebangsaan, Bela Negara, dan PBB" draggable="false"></div>
+              <h3 class="cert-title">Wawasan Kebangsaan &amp; Bela Negara</h3>
+              <p class="cert-meta">Politeknik Negeri Jember &middot; 2025</p>
+            </article>
+
             </div>
             <button class="cert-nav cert-next" type="button" aria-label="Berikutnya">&#10095;</button>
           </div>
@@ -317,14 +387,13 @@
         </div>
       </section>
     <footer class="footer glass">
-      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Icon">
+      <img src="assets/img/foto-profil.png" alt="Icon Cintya" style="object-fit: cover; object-position: center 12%; background: #cfe0f7;">
       <div><p>Archive by</p><strong>@cintya.azwa</strong></div>
     </footer>
     </div>
   </div>
 
-
-  <!-- Tampilan besar sertifikat (muncul saat sertifikat diklik) -->
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Sertifikat">
     <button class="lb-close" type="button" aria-label="Tutup">&#10005;</button>
     <button class="lb-nav lb-prev" type="button" aria-label="Sebelumnya">&#10094;</button>
@@ -335,7 +404,20 @@
     <button class="lb-nav lb-next" type="button" aria-label="Berikutnya">&#10095;</button>
   </div>
 
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/scroll.js"></script>
+  <script src="assets/js/cert-focus.js"></script>
+  <script src="assets/js/contributions.js"></script>
+  <script>
+    /* animasi masuk halaman About */
+    (function () {
+      var w = document.getElementById('aboutWrap');
+      if (!w || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { w.classList.toggle('is-in', e.isIntersecting); });
+      }, { threshold: 0.6 }).observe(w);
+    })();
+  </script>
 </body>
 </html>
