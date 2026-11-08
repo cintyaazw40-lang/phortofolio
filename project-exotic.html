@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eXotic Gaming &amp; Cafe | Portofolio Cintya</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
+  <link rel="shortcut icon" href="assets/img/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png?v=2">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/detail.css">
@@ -43,7 +47,7 @@
           <div><small>Tahun</small><strong>2026</strong></div>
         </div>
         <div class="d-actions">
-           <a class="btn-readmore" href="LINK-DEMO-KAMU" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Demo</a>
+           <a class="btn-readmore" href="https://youtu.be/yfQ3A477Z9k?si=b4p3FE-Oetvy_YLW" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Demo</a>
 <a class="btn-ghost" href="https://github.com/f4lzzz/Exotic-GaminG.git" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source Code</a>
         </div>
       </div>
@@ -102,5 +106,100 @@
   </main>
 
   <script src="assets/js/detail.js"></script>
+   <script >
+     /* pencarian: ketik kata kunci, lalu lompat ke halaman yang memuatnya */
+    (function () {
+      var box = document.getElementById('searchBox');
+      var input = document.getElementById('searchInput');
+      var btn = document.getElementById('searchBtn');
+      var list = document.getElementById('searchResults');
+      if (!box || !input || !list) return;
+
+      var labels = {
+        'home': 'Home', 'about': 'About', 'keahlian': 'Keahlian',
+        'project': 'Project: Datasync Core',
+        'project-2': 'Project: eXotic Gaming & Cafe',
+        'project-3': 'Project: Dapur Buk Mon',
+        'award': 'Award', 'contributions': 'Contributions', 'certificates': 'Certificates'
+      };
+      var pages = [].slice.call(document.querySelectorAll('.page'));
+      var results = [];
+
+      function esc(s) {
+        return s.replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function search(q) {
+        q = q.trim().toLowerCase();
+        if (!q) return [];
+        var out = [];
+        pages.forEach(function (p) {
+          var text = p.textContent.replace(/\s+/g, ' ').trim();
+          var i = text.toLowerCase().indexOf(q);
+          var label = labels[p.id] || p.id;
+          var inLabel = label.toLowerCase().indexOf(q) > -1;
+          if (i > -1 || inLabel) {
+            var snip = '';
+            if (i > -1) {
+              var s = Math.max(0, i - 25);
+              snip = (s > 0 ? '…' : '') + text.substr(s, 80) + '…';
+            }
+            out.push({ id: p.id, label: label, snip: snip });
+          }
+        });
+        return out;
+      }
+
+      function close() { list.hidden = true; }
+
+      function render() {
+        var q = input.value.trim();
+        if (!q) { results = []; close(); return; }
+        results = search(q);
+        if (!results.length) {
+          list.innerHTML = '<li class="sr-empty">Tidak ditemukan</li>';
+        } else {
+          list.innerHTML = results.map(function (r, i) {
+            return '<li data-i="' + i + '" tabindex="0"><strong>' + esc(r.label) + '</strong>' +
+                   (r.snip ? '<small>' + esc(r.snip) + '</small>' : '') + '</li>';
+          }).join('');
+        }
+        list.hidden = false;
+      }
+
+      function go(r) {
+        if (!r) return;
+        var el = document.getElementById(r.id);
+        close();
+        input.blur();
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      input.addEventListener('input', render);
+      input.addEventListener('focus', render);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); go(results[0]); }
+        if (e.key === 'Escape') { close(); input.blur(); }
+      });
+      btn.addEventListener('click', function () {
+        if (input.value.trim()) { render(); go(results[0]); } else { input.focus(); }
+      });
+      list.addEventListener('click', function (e) {
+        var li = e.target.closest('li[data-i]');
+        if (li) go(results[+li.getAttribute('data-i')]);
+      });
+      list.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          var li = e.target.closest('li[data-i]');
+          if (li) go(results[+li.getAttribute('data-i')]);
+        }
+      });
+      document.addEventListener('click', function (e) {
+        if (!box.contains(e.target)) close();
+      });
+    })();
+   </script>
 </body>
 </html>

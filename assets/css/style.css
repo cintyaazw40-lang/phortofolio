@@ -1982,3 +1982,148 @@ html.lb-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .header-section::before, .header-section::after { transition: none; }
 }
+/* ============================================================
+   ABOUT 2: KEAHLIAN  (tempel di PALING BAWAH assets/css/style.css)
+   ============================================================ */
+.skills-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(1rem, 3vh, 1.8rem);
+  min-height: 0;
+}
+.skills-wrap > .section-title { align-self: flex-start; margin-bottom: 0; }
+
+.sk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(.9rem, 2.4vh, 1.6rem);
+}
+.sk-card {
+  padding: clamp(1.1rem, 3vh, 1.8rem) clamp(1.2rem, 2.4vw, 2rem);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #2c4c7a 0%, #1e3a5f 100%);
+  color: #fff;
+  box-shadow: 0 14px 32px rgba(30, 58, 95, .3);
+}
+.sk-card h3 {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: clamp(.7rem, 2vh, 1.1rem);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2.8vh, 1.6rem);
+}
+.sk-card h3 i { font-size: .9em; opacity: .9; }
+
+.sk-chips { display: flex; flex-wrap: wrap; gap: .55rem; }
+.sk-chips span {
+  padding: .35rem 1rem;
+  border-radius: 30px;
+  font-size: clamp(.8rem, 1.8vh, .95rem);
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .55);
+  transition: background .3s, transform .3s;
+}
+.sk-chips span:hover { background: rgba(255, 255, 255, .25); transform: translateY(-2px); }
+
+/* animasi masuk */
+.js .skills-wrap:not(.is-in) .section-title,
+.js .skills-wrap:not(.is-in) .sk-card { opacity: 0; transform: translateY(28px); }
+.skills-wrap .section-title { transition: opacity .7s ease, transform .8s cubic-bezier(.2,.9,.25,1); }
+.sk-card { transition: opacity .7s ease, transform .8s cubic-bezier(.2,.9,.25,1); }
+.sk-card:nth-child(1) { transition-delay: .2s; }
+.sk-card:nth-child(2) { transition-delay: .35s; }
+.sk-card:nth-child(3) { transition-delay: .5s; }
+.sk-card:nth-child(4) { transition-delay: .65s; }
+
+@media (max-width: 768px) {
+  .sk-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills-wrap .section-title, .sk-card { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+/* ============================================================
+   TOMBOL CARI di header (kotak kanan)  - tempel di PALING BAWAH style.css
+   ============================================================ */
+.header-section .search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  width: clamp(230px, 24vw, 340px);
+  padding: 0 .35rem 0 1.1rem;
+}
+.search-box input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: .9rem;
+  color: var(--text-color);
+}
+.search-box input::placeholder { color: var(--text-soft); opacity: .75; }
+.search-box input::-webkit-search-cancel-button { display: none; }
+
+.search-btn {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: .85rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(59, 111, 182, .4);
+  transition: background .3s, transform .3s;
+}
+.search-btn:hover { background: var(--accent-dark); transform: scale(1.08); }
+
+/* daftar hasil */
+.search-results {
+  position: absolute;
+  top: calc(100% + .5rem);
+  right: 0;
+  width: max(100%, 300px);
+  max-height: 50vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: .4rem;
+  list-style: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 14px 34px rgba(30, 58, 95, .28);
+  z-index: 300;
+}
+.search-results[hidden] { display: none; }
+.search-results li {
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+  padding: .55rem .8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
+.search-results li strong { font-size: .9rem; color: var(--text-color); }
+.search-results li small { font-size: .75rem; color: var(--text-soft); line-height: 1.4; }
+.search-results li:hover,
+.search-results li:focus-visible { background: var(--accent-soft); }
+.search-results .sr-empty { cursor: default; font-size: .85rem; color: var(--text-soft); }
+.search-results .sr-empty:hover { background: none; }
+
+@media (max-width: 768px) {
+  .header-section .search-box { width: 100%; height: 45px; }
+  .search-results { width: 100%; }
+}
+@media (min-width: 769px) and (max-height: 900px) {
+  .search-btn { width: 30px; height: 30px; }
+  .search-box input { font-size: .85rem; }
+}

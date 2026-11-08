@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Cintya</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
+  <link rel="shortcut icon" href="assets/img/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png?v=2">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,7 +50,11 @@
 
     <div class="nav-bottom-row">
       <div class="nama-logo glass">Cintya Azwa Sfrina R.H</div>
-      <div class="kotak-kosong glass"></div>
+      <div class="kotak-kosong search-box glass" id="searchBox" role="search">
+        <input id="searchInput" type="search" placeholder="Cari di portofolio..." autocomplete="off" aria-label="Cari di portofolio">
+        <button class="search-btn" id="searchBtn" type="button" aria-label="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <ul class="search-results" id="searchResults" hidden></ul>
+      </div>
     </div>
   </header>
 
@@ -139,10 +147,7 @@
               <i class="fa-brands fa-linkedin-in"></i><span class="ab-go">&#8599;</span>
               <small>linkedin.com/in/cintya-azwa-safrina-r-h</small>
             </a>
-            <a class="ab-link" href="https://cintyaazw40-lang.github.io/phortofolio/" target="_blank" rel="noopener">
-              <i class="fa-solid fa-globe"></i><span class="ab-go">&#8599;</span>
-              <small>cintyaazw40-lang.github.io/phortofolio</small>
-            </a>
+          
             <a class="ab-link" href="tel:+6282229604634">
               <i class="fa-solid fa-phone"></i><span class="ab-go">&#8599;</span>
               <small>+62 822 2960 4634</small>
@@ -154,11 +159,57 @@
     </div>
   </div>
 
+  <!-- HALAMAN 2B: KEAHLIAN (di bawah About, sesuai CV) -->
+  <div class="page" id="keahlian" data-nav="about">
+    <div class="container">
+      <div class="skills-wrap" id="skillsWrap">
+        <h2 class="section-title">Keahlian</h2>
+
+        <div class="sk-grid">
+          <article class="sk-card">
+            <h3><i class="fa-solid fa-code"></i> Teknologi &amp; Pemrograman</h3>
+            <div class="sk-chips">
+              <span>PHP</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+              <span>Node.js</span><span>Dart</span><span>Java</span><span>SQLite</span>
+              <span>Raspberry Pi 4 (IoT)</span><span>Google Cloud</span>
+            </div>
+          </article>
+
+          <article class="sk-card">
+            <h3><i class="fa-solid fa-screwdriver-wrench"></i> Perangkat Lunak</h3>
+            <div class="sk-chips">
+               <span>DJI Terra</span><span>Trello</span><span>VS Code</span><span>Microsoft Office</span>
+              <span>Canva</span><span>Figma</span><span>Adobe Photoshop (dasar)</span>
+              <span>Adobe Premiere (dasar)</span><span>CapCut</span><span>DJI FlightHub 2</span>
+            </div>
+          </article>
+
+          <article class="sk-card">
+            <h3><i class="fa-solid fa-language"></i> Bahasa</h3>
+            <div class="sk-chips">
+              <span>Bahasa Indonesia (bahasa ibu)</span>
+              <span>Bahasa Inggris (dasar)</span>
+            </div>
+          </article>
+
+          <article class="sk-card">
+            <h3><i class="fa-solid fa-users"></i> Keahlian Lunak</h3>
+            <div class="sk-chips">
+              <span>Kepemimpinan</span><span>Komunikasi &amp; Public Speaking</span>
+              <span>Berpikir Kritis &amp; Pemecahan Masalah</span>
+              <span>Kerja Sama Tim</span><span>Kreativitas</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- HALAMAN 3: PROJECT 1 - Datasync (2 HP miring berhadapan) -->
   <div class="page" id="project" data-nav="project">
     <div class="container">
       <section class="projects glass">
-        <h2 class="section-title">My Project</h2>
+        <h2 class="section-title">Project KMIPN VIII 2026</h2>
         <article class="project-card has-phone">
           <div class="phone-pair">
             <img class="pair-left" src="assets/img/projects/datasync-core.png" alt="Datasync Core - Splash Screen" draggable="false">
@@ -180,7 +231,7 @@
   <div class="page" id="project-2" data-nav="project">
     <div class="container">
       <section class="projects glass">
-        <h2 class="section-title">My Project</h2>
+        <h2 class="section-title">Project AKIIR SEMESTER</h2>
         <article class="project-card has-phone reverse">
           <div class="phone-pair pair-flat">
             <img class="pair-left" src="assets/img/projects/exotic-left.png" alt="eXotic Gaming &amp; Cafe - Dashboard Owner" draggable="false">
@@ -202,7 +253,7 @@
   <div class="page" id="project-3" data-nav="project">
     <div class="container">
       <section class="projects glass">
-        <h2 class="section-title">My Project</h2>
+        <h2 class="section-title">Project AKIR SEMESTER</h2>
         <article class="project-card has-phone">
           <div class="laptop-stack">
             <img class="laptop-back" src="assets/img/projects/dapur-laptop-kontak.png" alt="Dapur Buk Mon - halaman Hubungi Kami" draggable="false">
@@ -410,13 +461,111 @@
   <script src="assets/js/cert-focus.js"></script>
   <script src="assets/js/contributions.js"></script>
   <script>
-    /* animasi masuk halaman About */
+    /* animasi masuk halaman About dan Keahlian */
     (function () {
-      var w = document.getElementById('aboutWrap');
-      if (!w || !('IntersectionObserver' in window)) return;
-      new IntersectionObserver(function (es) {
-        es.forEach(function (e) { w.classList.toggle('is-in', e.isIntersecting); });
-      }, { threshold: 0.6 }).observe(w);
+      if (!('IntersectionObserver' in window)) return;
+      [['aboutWrap', 0.6], ['skillsWrap', 0.5]].forEach(function (c) {
+        var w = document.getElementById(c[0]);
+        if (!w) return;
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) { w.classList.toggle('is-in', e.isIntersecting); });
+        }, { threshold: c[1] }).observe(w);
+      });
+    })();
+  </script>
+  <script>
+    /* pencarian: ketik kata kunci, lalu lompat ke halaman yang memuatnya */
+    (function () {
+      var box = document.getElementById('searchBox');
+      var input = document.getElementById('searchInput');
+      var btn = document.getElementById('searchBtn');
+      var list = document.getElementById('searchResults');
+      if (!box || !input || !list) return;
+
+      var labels = {
+        'home': 'Home', 'about': 'About', 'keahlian': 'Keahlian',
+        'project': 'Project: Datasync Core',
+        'project-2': 'Project: eXotic Gaming & Cafe',
+        'project-3': 'Project: Dapur Buk Mon',
+        'award': 'Award', 'contributions': 'Contributions', 'certificates': 'Certificates'
+      };
+      var pages = [].slice.call(document.querySelectorAll('.page'));
+      var results = [];
+
+      function esc(s) {
+        return s.replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function search(q) {
+        q = q.trim().toLowerCase();
+        if (!q) return [];
+        var out = [];
+        pages.forEach(function (p) {
+          var text = p.textContent.replace(/\s+/g, ' ').trim();
+          var i = text.toLowerCase().indexOf(q);
+          var label = labels[p.id] || p.id;
+          var inLabel = label.toLowerCase().indexOf(q) > -1;
+          if (i > -1 || inLabel) {
+            var snip = '';
+            if (i > -1) {
+              var s = Math.max(0, i - 25);
+              snip = (s > 0 ? '…' : '') + text.substr(s, 80) + '…';
+            }
+            out.push({ id: p.id, label: label, snip: snip });
+          }
+        });
+        return out;
+      }
+
+      function close() { list.hidden = true; }
+
+      function render() {
+        var q = input.value.trim();
+        if (!q) { results = []; close(); return; }
+        results = search(q);
+        if (!results.length) {
+          list.innerHTML = '<li class="sr-empty">Tidak ditemukan</li>';
+        } else {
+          list.innerHTML = results.map(function (r, i) {
+            return '<li data-i="' + i + '" tabindex="0"><strong>' + esc(r.label) + '</strong>' +
+                   (r.snip ? '<small>' + esc(r.snip) + '</small>' : '') + '</li>';
+          }).join('');
+        }
+        list.hidden = false;
+      }
+
+      function go(r) {
+        if (!r) return;
+        var el = document.getElementById(r.id);
+        close();
+        input.blur();
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      input.addEventListener('input', render);
+      input.addEventListener('focus', render);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); go(results[0]); }
+        if (e.key === 'Escape') { close(); input.blur(); }
+      });
+      btn.addEventListener('click', function () {
+        if (input.value.trim()) { render(); go(results[0]); } else { input.focus(); }
+      });
+      list.addEventListener('click', function (e) {
+        var li = e.target.closest('li[data-i]');
+        if (li) go(results[+li.getAttribute('data-i')]);
+      });
+      list.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          var li = e.target.closest('li[data-i]');
+          if (li) go(results[+li.getAttribute('data-i')]);
+        }
+      });
+      document.addEventListener('click', function (e) {
+        if (!box.contains(e.target)) close();
+      });
     })();
   </script>
 </body>
